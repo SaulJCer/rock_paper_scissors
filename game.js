@@ -2,9 +2,9 @@ console.log("Hola world")
 
 let humanScore = 0;
 let cpuScore = 0;
-let rock = "Rock"
-let paper = "Paper"
-let scissors = "Scissors"
+let rock = 0;
+let paper = 1;
+let scissors = 2;
 
 
 function getComputerChoice() {
@@ -26,13 +26,23 @@ console.log(getComputerChoice());
 console.log(Math.random() * 3);
 
 function getPlayerChoice() {
-    return prompt("Rock, Paper or Scissors");
+    let humChoice = prompt("Rock, Paper or Scissors");
+    if (humChoice == "Rock") {
+        return rock;
+    }
+    else if (humChoice == "Paper") {
+        return paper;
+    }
+    else if (humChoice == "Scissors") {
+        return scissors;
+    }
 }
 
-console.log(getPlayerChoice());
+// console.log(getPlayerChoice());
 
 function playRound() {
     let playerChoice = getPlayerChoice();
+    console.log(playerChoice);
     let computerChoice = getComputerChoice();
     if (playerChoice == computerChoice) {
         return console.log('Its a tie')
