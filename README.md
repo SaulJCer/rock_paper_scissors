@@ -26,14 +26,15 @@ check conditons
     player - rock -- cpu scissors
     player - paper -- scissors
     
-    rock, rock
-    paper, paper
+    rock, rock - good
+    paper, paper - good
     sci, sci
 
     condtion player wins 
-    rock -- sci good, paper -- rock, sci -- paper
+    rock -- sci good, paper -- rock - good, sci -- paper - good
+
     cond cpu wins
-    rock -- paper,  sci -- rock, paper -- sci
+    rock -- paper good,  sci -- rock, paper -- sci good
 
 
     rock, paper - paper, rock
