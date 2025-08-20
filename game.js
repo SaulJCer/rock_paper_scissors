@@ -16,6 +16,12 @@ function getComputerChoice() {
     }
 
 }
-console.log(getComputerChoice());
+// console.log(getComputerChoice());
 
 // console.log(Math.random() * 3);
+
+function getPlayerChoice() {
+    return prompt("Rock, Paper or Scissors");
+}
+
+console.log(getPlayerChoice());
