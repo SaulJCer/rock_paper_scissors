@@ -34,7 +34,7 @@ check conditons
     rock -- sci good, paper -- rock - good, sci -- paper - good
 
     cond cpu wins
-    rock -- paper good,  sci -- rock, paper -- sci good
+    rock -- paper good,  sci -- rock - good, paper -- sci good
 
 
     rock, paper - paper, rock

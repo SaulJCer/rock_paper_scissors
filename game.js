@@ -2,9 +2,9 @@ console.log("Hola world")
 
 let humanScore = 0;
 let cpuScore = 0;
-let rock = "Rock"
-let paper = "Paper"
-let scissors = "Scissors"
+let rock = "rock"
+let paper = "paper"
+let scissors = "scissors"
 
 
 function getComputerChoice() {
@@ -26,7 +26,7 @@ function getComputerChoice() {
     console.log(Math.random() * 3);
 
 function getPlayerChoice() {
-    return prompt("Rock, Paper or Scissors");
+    return prompt("Rock, Paper or Scissors").toLowerCase();
 }
 
 // console.log(getPlayerChoice());
