@@ -1,4 +1,4 @@
-console.log("Hola world")
+// console.log("Hola world")
 
 let humanScore = 0;
 let cpuScore = 0;
@@ -21,19 +21,19 @@ function getComputerChoice() {
     }
 
 }
-console.log(getComputerChoice());
+console.log(getComputerChoice() + ' cpu');
 
-console.log(Math.random() * 3);
+// console.log(Math.random() * 3);
 
 function getPlayerChoice() {
-    let humChoice = prompt("Rock, Paper or Scissors");
-    if (humChoice == "Rock") {
+    let humChoice = prompt("Rock, Paper or Scissors").toLowerCase();
+    if (humChoice == "rock") {
         return rock;
     }
-    else if (humChoice == "Paper") {
+    else if (humChoice == "paper") {
         return paper;
     }
-    else if (humChoice == "Scissors") {
+    else if (humChoice == "scissors") {
         return scissors;
     }
 }
@@ -44,7 +44,7 @@ function playRound() {
     let playerChoice = getPlayerChoice();
     console.log(playerChoice);
     let computerChoice = getComputerChoice();
-    if (playerChoice == computerChoice) {
+    if (playerChoice === computerChoice) {
         return console.log('Its a tie')
     }
     else if (

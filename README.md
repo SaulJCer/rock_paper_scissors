@@ -31,7 +31,7 @@ check conditons
     sci, sci
 
     condtion player wins 
-    rock -- sci, paper -- rock, sci -- paper
+    rock -- sci good, paper -- rock, sci -- paper
     cond cpu wins
     rock -- paper,  sci -- rock, paper -- sci
 
@@ -40,3 +40,8 @@ check conditons
     rock, sci - sci, rock
     paper, sci - sci, paper
     
+
+
+    rock = 0
+    paper = 1
+    sci = 2
