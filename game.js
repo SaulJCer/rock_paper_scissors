@@ -35,10 +35,13 @@ function getPlayerChoice() {
 
 function playRound() {
     
+    // Get rock,paper or scissors from player and cpu
     const playerChoice = getPlayerChoice();
     const computerChoice = getComputerChoice();
     // console.log(playerChoice);
     // console.log(computerChoice);
+
+    // Checks the results of round
     if (playerChoice == computerChoice) {
         return console.log('Its a tie')
     }
@@ -60,6 +63,8 @@ function playRound() {
         cpuScore += 1;
         return console.log("You lost Score: You: " + humanScore + " CPU: " + cpuScore);
     }
+    // Checks the results of round
+
 }
 
 // playRound();
@@ -72,7 +77,7 @@ function playGame() {
         // console.log(humanScore);
         // console.log(cpuScore);
     }
-    console.log ("Current Score: Player: " + humanScore + " CPU: " + cpuScore);
+    console.log ("Final Score: Player: " + humanScore + " CPU: " + cpuScore);
 }
 
 playGame();

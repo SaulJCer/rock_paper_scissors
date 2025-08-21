@@ -46,3 +46,10 @@ check conditons
     rock = 0
     paper = 1
     sci = 2
+
+
+    function playGame
+
+    have a check on how if human or computer has 5 points
+
+    while loop humanscore is less than 5 or cpuScore is less than 5
