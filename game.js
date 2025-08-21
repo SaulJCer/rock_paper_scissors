@@ -77,7 +77,18 @@ function playGame() {
         // console.log(humanScore);
         // console.log(cpuScore);
     }
-    console.log ("Final Score: Player: " + humanScore + " CPU: " + cpuScore);
+
+    if (humanScore > cpuScore) {
+            console.log ("You Won: Player: " + humanScore + " CPU: " + cpuScore);
+
+    }
+    else if (humanScore < cpuScore) {
+        console.log ("You Lost Player: " + humanScore + " CPU: " + cpuScore);
+    }
+    
+    else {
+        console.log ("You Tied: " + humanScore + " CPU: " + cpuScore);
+    }
 }
 
 playGame();
