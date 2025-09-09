@@ -33,13 +33,10 @@ function getPlayerChoice() {
 
 
 
-function playRound() {
+function playRound(playerChoice) {
     
-    // Get rock,paper or scissors from player and cpu
-    const playerChoice = getPlayerChoice();
+
     const computerChoice = getComputerChoice();
-    // console.log(playerChoice);
-    // console.log(computerChoice);
 
     // Checks the results of round
     if (playerChoice == computerChoice) {
@@ -63,11 +60,21 @@ function playRound() {
         cpuScore += 1;
         return console.log("You lost Score: You: " + humanScore + " CPU: " + cpuScore);
     }
+
+
     // Checks the results of round
+
 
 }
 
-// playRound();
+playRound();
+
+const rockButton = document.getElementById('rockBtn');
+const paperButton = document.getElementById('paperBtn');
+const scissorsButton = document.getElementById('scissorsBtn');
+
+
+
 
 function playGame() {
     roundCounter = 0;
@@ -91,5 +98,5 @@ function playGame() {
     }
 }
 
-playGame();
+// playGame();
 
