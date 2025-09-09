@@ -6,6 +6,28 @@ let rock = "rock"
 let paper = "paper"
 let scissors = "scissors"
 
+const rockButton = document.getElementById('rockBtn');
+const paperButton = document.getElementById('paperBtn');
+const scissorsButton = document.getElementById('scissorsBtn');
+
+const playerChoice = document.querySelector("#playerChoice");
+const botChoice = document.querySelector("#cpuChoice")
+playerChoice.textContent = ' ';
+
+rockButton.addEventListener('click', function() {
+    playRound(rock);
+    playerChoice.textContent = rock;
+})
+
+paperButton.addEventListener('click', function() {
+    playRound(paper);
+    playerChoice.textContent = paper;
+})
+scissorsButton.addEventListener('click', function() {
+    playRound(scissors);
+    playerChoice.textContent = scissors;
+})
+
 
 function getComputerChoice() {
     cpuChoice = Math.floor(Math.random() * 3); // gets a number from 0 - 2 inclusive
@@ -37,7 +59,7 @@ function playRound(playerChoice) {
     
 
     const computerChoice = getComputerChoice();
-
+    botChoice.textContent = computerChoice;
     // Checks the results of round
     if (playerChoice == computerChoice) {
         return console.log('Its a tie')
@@ -58,21 +80,16 @@ function playRound(playerChoice) {
         || ((playerChoice == scissors) && (computerChoice == rock))
     ){
         cpuScore += 1;
-        return console.log("You lost Score: You: " + humanScore + " CPU: " + cpuScore);
-    }
+        return 
 
 
     // Checks the results of round
 
 
 }
+}
 
 playRound();
-
-const rockButton = document.getElementById('rockBtn');
-const paperButton = document.getElementById('paperBtn');
-const scissorsButton = document.getElementById('scissorsBtn');
-
 
 
 
