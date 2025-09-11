@@ -14,6 +14,8 @@ const playerChoice = document.querySelector("#playerChoice");
 const botChoice = document.querySelector("#cpuChoice")
 playerChoice.textContent = ' ';
 
+const gameResult = document.querySelector("#result");
+
 rockButton.addEventListener('click', function() {
     playRound(rock);
     playerChoice.textContent = rock;
@@ -62,7 +64,7 @@ function playRound(playerChoice) {
     botChoice.textContent = computerChoice;
     // Checks the results of round
     if (playerChoice == computerChoice) {
-        return console.log('Its a tie')
+        gameResult.textContent = ("This round is a TIE - Player: " + humanScore + " CPU: " + cpuScore);
     }
     else if (
         ((playerChoice == rock) && (computerChoice == scissors))
@@ -70,8 +72,7 @@ function playRound(playerChoice) {
         || ((playerChoice == scissors) && (computerChoice == paper))
     ) {
         humanScore += 1;
-        return console.log("You won Score: You: " + humanScore + " CPU: " + cpuScore);
-    }
+        gameResult.textContent = ("You Won This round - Player: " + humanScore + " CPU: " + cpuScore);    }
     // 2nd else if could just be an else, but 
     // since using string values, we will make sure
     else if (
@@ -79,6 +80,7 @@ function playRound(playerChoice) {
         || ((playerChoice == paper) && (computerChoice == scissors))
         || ((playerChoice == scissors) && (computerChoice == rock))
     ){
+        gameResult.textContent = ("You Lost this round - Player: " + humanScore + " CPU: " + cpuScore);
         cpuScore += 1;
         return 
 
@@ -89,31 +91,24 @@ function playRound(playerChoice) {
 }
 }
 
-playRound();
+// playRound();
 
 
 
 function playGame() {
-    roundCounter = 0;
-    while (roundCounter < 5) {
-        roundCounter += 1;
+    while (humanScore < 5 || cpuScore < 5) {
         playRound();
         // console.log(humanScore);
         // console.log(cpuScore);
     }
 
     if (humanScore > cpuScore) {
-            console.log ("You Won: Player: " + humanScore + " CPU: " + cpuScore);
+        gameResult.textContent = ("You Won the GAME - Player: " + humanScore + " CPU: " + cpuScore);
 
     }
-    else if (humanScore < cpuScore) {
-        console.log ("You Lost Player: " + humanScore + " CPU: " + cpuScore);
-    }
-    
-    else {
-        console.log ("You Tied: " + humanScore + " CPU: " + cpuScore);
+    else{
+        gameResult.textContent = ("You Lost the GAME - Player: " + humanScore + " CPU: " + cpuScore);
     }
 }
-
-// playGame();
+playGame();
 
