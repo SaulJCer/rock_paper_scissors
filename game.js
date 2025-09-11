@@ -6,8 +6,6 @@ let rock = "rock"
 let paper = "paper"
 let scissors = "scissors"
 
-const startGame = document.querySelector("#startGame");
-
 const rockButton = document.getElementById('rockBtn');
 const paperButton = document.getElementById('paperBtn');
 const scissorsButton = document.getElementById('scissorsBtn');
@@ -18,10 +16,6 @@ playerChoice.textContent = ' ';
 
 const gameResult = document.querySelector("#result");
 
-
-// startGame.addEventListener('click', function() {
-//     playGame();
-// })
 
 rockButton.addEventListener('click', function() {
     playRound(rock);
@@ -56,16 +50,13 @@ function getComputerChoice() {
 
     // console.log(Math.random() * 3);
 
-function getPlayerChoice() {
-    return prompt("Rock, Paper or Scissors").toLowerCase();
-}
 
 // console.log(getPlayerChoice());
 
 
 
 function playRound(playerChoice) {
-    checkGameOver()
+    
 
     const computerChoice = getComputerChoice();
     botChoice.textContent = computerChoice;
@@ -87,15 +78,16 @@ function playRound(playerChoice) {
         || ((playerChoice == paper) && (computerChoice == scissors))
         || ((playerChoice == scissors) && (computerChoice == rock))
     ){
+        cpuScore += 1; 
         gameResult.textContent = ("You Lost this round - Player: " + humanScore + " CPU: " + cpuScore);
-        cpuScore += 1;
-        return 
-
+        
+    }
 
     // Checks the results of round
 
 
-}
+
+    checkGameOver();
 }
 
 // playRound();
@@ -103,6 +95,7 @@ function playRound(playerChoice) {
 
 // fix function to use two condtions to see if it become more efficent;
 function checkGameOver() {
+    console.log(`${humanScore} vs ${cpuScore}`);
     if (humanScore == 5 || cpuScore == 5) {
         rockButton.remove();
         paperButton.remove();
