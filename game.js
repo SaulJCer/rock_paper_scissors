@@ -15,6 +15,8 @@ const botChoice = document.querySelector("#cpuChoice")
 playerChoice.textContent = ' ';
 
 const gameResult = document.querySelector("#result");
+const bodyElement = document.querySelector("body");
+const gameChoices = document.querySelector(".choices");
 
 
 rockButton.addEventListener('click', function() {
@@ -100,12 +102,21 @@ function checkGameOver() {
         rockButton.remove();
         paperButton.remove();
         scissorsButton.remove();
+
+        gameChoices.remove();
+        bodyElement.style.justifyContent = "center";
+        bodyElement.style.backgroundColor = "#0C6291";
+        bodyElement.style.color = "#ACECF7";
+        
+        
         if (humanScore > cpuScore) {
         gameResult.textContent = ("You Won the GAME - Player: " + humanScore + " CPU: " + cpuScore);
-
+            gameResult.style.backgroundColor = "#7BC950"
+            bodyElement.style.color = "#FEFCAD";
         }
         else{
             gameResult.textContent = ("You Lost the GAME - Player: " + humanScore + " CPU: " + cpuScore);
+            gameResult.style.backgroundColor = "#470024"
         }
     }
 }
