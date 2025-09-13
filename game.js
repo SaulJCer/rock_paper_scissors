@@ -18,6 +18,13 @@ const gameResult = document.querySelector("#result");
 const bodyElement = document.querySelector("body");
 const gameChoices = document.querySelector(".choices");
 
+const playAgainButton = document.querySelector(".playAgainButton");
+
+playAgainButton.addEventListener("click", function() {
+    console.log("YO WE ARE CLICKED")
+    playAgain();
+})
+
 
 rockButton.addEventListener('click', function() {
     playRound(rock);
@@ -103,10 +110,13 @@ function checkGameOver() {
         paperButton.remove();
         scissorsButton.remove();
 
-        gameChoices.remove();
+        playAgainButton.style.display = "block"
+
+        gameChoices.style.display = "none";
         bodyElement.style.justifyContent = "center";
         bodyElement.style.backgroundColor = "#0C6291";
         bodyElement.style.color = "#ACECF7";
+        
         
         
         if (humanScore > cpuScore) {
@@ -138,3 +148,6 @@ function playGame() {
 }
 // playGame();
 
+function playAgain () {
+    playAgainButton.style.display = "none";
+}

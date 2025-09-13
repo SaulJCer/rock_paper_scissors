@@ -45,3 +45,7 @@ h1 {
 #result {
     font-size: 6.5vh;
 }
+
+.playAgainButton {
+    display: none;
+}
