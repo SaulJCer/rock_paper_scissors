@@ -16,11 +16,12 @@ h1 {
 
 
 .score, .choices {
-    display: flex;
+    
     flex-direction: row;
     justify-content: space-around;
     margin: 0 30vw;
     font-size: 50px;
+    display: flex;
 }
 
 .playerButtons {

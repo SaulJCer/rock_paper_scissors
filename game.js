@@ -10,6 +10,8 @@ const rockButton = document.getElementById('rockBtn');
 const paperButton = document.getElementById('paperBtn');
 const scissorsButton = document.getElementById('scissorsBtn');
 
+const playerButtonContainer = document.querySelector(".playerButtonsContainer");
+
 const playerChoice = document.querySelector("#playerChoice");
 const botChoice = document.querySelector("#cpuChoice")
 playerChoice.textContent = ' ';
@@ -104,11 +106,11 @@ function playRound(playerChoice) {
 
 // fix function to use two condtions to see if it become more efficent;
 function checkGameOver() {
-    console.log(`${humanScore} vs ${cpuScore}`);
     if (humanScore == 5 || cpuScore == 5) {
-        rockButton.remove();
-        paperButton.remove();
-        scissorsButton.remove();
+        // rockButton.style.display = "none";
+        // paperButton.style.display = "none";
+        // scissorsButton.style.display = "none";
+        
 
         playAgainButton.style.display = "block"
 
@@ -116,11 +118,11 @@ function checkGameOver() {
         bodyElement.style.justifyContent = "center";
         bodyElement.style.backgroundColor = "#0C6291";
         bodyElement.style.color = "#ACECF7";
-        
+        playerButtonContainer.style.display = 'none';
         
         
         if (humanScore > cpuScore) {
-        gameResult.textContent = ("You Won the GAME - Player: " + humanScore + " CPU: " + cpuScore);
+            gameResult.textContent = ("You Won the GAME - Player: " + humanScore + " CPU: " + cpuScore);
             gameResult.style.backgroundColor = "#7BC950"
             bodyElement.style.color = "#FEFCAD";
         }
@@ -150,4 +152,22 @@ function playGame() {
 
 function playAgain () {
     playAgainButton.style.display = "none";
+    playerButtonContainer.style.display = '';
+    gameChoices.style.display = "";
+    gameResult.textContent = ("Lets Play AGAIN!!");
+    humanScore = 0;
+    cpuScore = 0;
+
+
+    // Changes style of page back to orginal style
+    gameResult.style.backgroundColor = "";
+    bodyElement.style.color = "";
+    bodyElement.style.justifyContent = "";
+    bodyElement.style.backgroundColor = "";
+    bodyElement.style.color = "";
+
+
+    // rockButton.style.display = "block";
+    // paperButton.style.display = "block";
+    // scissorsButton.style.display = "block";
 }
